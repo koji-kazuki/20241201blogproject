@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="{{url_for('crud.static',filename='/style.css')}}"
+        rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="pad">
+        <h3>投稿記事の削除ページにログイン</h3>
+        <form 
+            action="{{url_for('crud.login_del')}}"
+            method="POST"
+            novalidate="novalidate">
+        
+            {{form.csrf_token}}
+            <p>
+                {{form.username.label}}
+
+                {{form.username(placeholder="ユーザー名")}}
+
+                {% for error in form.username.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{form.password.label}}
+
+                {{form.password(placeholder="パスワード")}}
+
+                {% for error in form.password.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+
+            </p>
+            <p>
+                {{form.submit()}}
+
+            </p>
+        </form>
+
+
+    </div>
+    
+</body>
+</html>

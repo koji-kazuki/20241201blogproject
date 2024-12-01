@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="{{url_for('crud.static',filename='/style.css')}}"
+        rel="stylesheet" />
+</head>
+<body>
+    <div class="pad">
+        <h2>投稿</h2>
+        <p>
+            タイトルと本文を入力して【投稿する】をクリックしてください。
+        </p>
+        <br>
+
+        <form
+            action="{{url_for('crud.article')}}"
+            method="POST"
+            novalidate="novalidate">
+            {{form.csrf_token}}
+            <p>
+                {{form.post_title.label}}
+
+                {{form.post_title(placeholder="タイトルを入力")}}
+
+                {% for error in form.post_title.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p>
+                {{form.post_contents.label}}
+
+                {{form.post_contents(placeholder="本文を入力")}}
+
+                {% for error in form.post_contents.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+
+            <hr>
+
+            <p>
+                {{form.submit()}}
+            </p>
+
+
+        </form>
+        <a href="{{url_for('crud.login')}}">投稿をやめる</a>
+
+
+    </div>
+    
+</body>
+</html>
