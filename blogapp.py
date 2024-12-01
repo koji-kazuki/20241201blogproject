@@ -13,7 +13,7 @@ from flask_migrate import Migrate
 Migrate(app,db)
 
 from sqlalchemy import select
-from apps import models
+import models
 from flask import render_template
 from flask import request
 from flask_paginate import Pagination,get_page_parameter
@@ -43,7 +43,7 @@ def show_entry(id):
     return render_template('ppost.html',entry=entry)
 
 from flask import url_for,redirect
-from apps import forms
+import forms
 from flask import flash
 
 @app.route('/contact',methods=['GET','POST'])
@@ -87,7 +87,7 @@ def send_mail(to,subject,template,**kwargs):
 
 
 
-from apps.crud.views import crud
+from crud.views import crud
 
 app.register_blueprint(crud)
 

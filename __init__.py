@@ -1,1 +1,1 @@
-import apps.models
+import models

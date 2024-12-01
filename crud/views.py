@@ -3,8 +3,8 @@ from flask import Blueprint
 crud = Blueprint('crud',__name__,template_folder='templates',static_folder='static_crud')
 
 from flask import render_template,url_for,redirect,session
-from apps.crud import forms
-from apps.blogapp import app
+from crud import forms
+from blogapp import app
 
 @crud.route('/admincreate',methods=['GET','POST'])
 def login():
@@ -24,8 +24,8 @@ def login():
         
     return render_template('login.html',form=form)
 
-from apps import models
-from apps.blogapp import db
+import models
+from blogapp import db
 
 @crud.route('/post',methods=['GET','POST'])
 def article():
