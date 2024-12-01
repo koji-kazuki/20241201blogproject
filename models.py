@@ -13,4 +13,7 @@ class Blogpost(db.Model):
 
     create_at = db.Column(db.Date,default=datetime.today())
 
+def init():
+    db.create_all()
+
     
