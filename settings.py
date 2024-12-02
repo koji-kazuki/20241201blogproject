@@ -2,7 +2,7 @@ import os
 
 basedir = os.path.dirname(os.path.dirname(__file__))
 
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir,'blog.sqlite')
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1) or 'sqlite:///' + os.path.join(basedir,'blog.sqlite')
 
 SECRET_KEY = os.urandom(10)
 
