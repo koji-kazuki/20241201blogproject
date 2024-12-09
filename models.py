@@ -1,6 +1,7 @@
 from datetime import datetime
 from blogapp import db
 
+
 class Blogpost(db.Model):
 
     __tablename__ = "posted"
