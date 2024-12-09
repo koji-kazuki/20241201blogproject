@@ -13,6 +13,18 @@ class Blogpost(db.Model):
 
     create_at = db.Column(db.Date,default=datetime.today())
 
+class testpost(db.Model):
+
+    __tablename__ = "test"
+
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+
+    title = db.Column(db.String(200),nullable=False)
+
+    contents = db.Column(db.Text,nullable=False)
+
+    create_at = db.Column(db.Date,default=datetime.today())
+
 
 
     
