@@ -16,7 +16,7 @@ class Blogpost(db.Model):
 
 class test(db.Model):
 
-    __tablename__ = "test"
+    __tablename__ = "test2"
 
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
 
