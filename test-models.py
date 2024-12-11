@@ -1,10 +1,6 @@
-from datetime import datetime
-from blogapp import db
-
-
 class Blogpost(db.Model):
 
-    __tablename__ = "posted"
+    __tablename__ = "test"
 
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
 
@@ -13,11 +9,3 @@ class Blogpost(db.Model):
     contents = db.Column(db.Text,nullable=False)
 
     create_at = db.Column(db.Date,default=datetime.today())
-
-
-
-
-
-
-
-    
